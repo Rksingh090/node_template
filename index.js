@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 
 app.get("/test", (req, res) => {
     res.json({
-        message: "API /test is running"
+        message: "Test Successfull!!!"
     })
 })
 
