@@ -23,6 +23,12 @@ app.get("/test", (req, res) => {
   });
 });
 
+app.get("/env", (req, res) => {
+  res.json({
+    message: `Env fetched: ${process.env.TEST_ENV || "Not Found"}`,
+  });
+});
+
 app.use((req, res, next) => {
   res.status(404).send('Not Found');
   console.log(`[${new Date().toISOString()}] 404 Not Found - ${req.method} ${req.url}`);
