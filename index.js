@@ -23,6 +23,11 @@ app.get("/test", (req, res) => {
   });
 });
 
+app.use((req, res, next) => {
+  res.status(404).send('Not Found');
+  console.log(`[${new Date().toISOString()}] 404 Not Found - ${req.method} ${req.url}`);
+});
+
 app.listen(4000, () => {
   console.log("App running");
 });
