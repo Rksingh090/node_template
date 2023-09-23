@@ -22,6 +22,11 @@ app.get("/test", (req, res) => {
     message: "Test Successfull!!!",
   });
 });
+app.get("/u", (req, res) => {
+  res.json({
+    message: "U Successfull!!!",
+  });
+});
 
 app.get("/env", (req, res) => {
   res.json({
