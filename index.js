@@ -30,7 +30,7 @@ app.get("/u", (req, res) => {
 
 app.get("/env", (req, res) => {
   res.json({
-    message: `Env fetched: ${process.env.TEST_ENV || "Not Found"}`,
+    message: `Env fetched: ${JSON.stringify(process.env)}`,
   });
 });
 
