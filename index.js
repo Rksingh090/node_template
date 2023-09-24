@@ -29,28 +29,13 @@ app.get("/u", (req, res) => {
 });
 
 app.get("/env", (req, res) => {
+  const {name} = req.query;
   res.json({
-    message: `Env fetched: ${JSON.stringify(process.env)}`,
+    message: `Env fetched: ${JSON.stringify(process.env[name])}`,
   });
 });
 
-app.get("/rahul", (req, res) => {
-  res.json({
-    message: `Rahul fetched: ${JSON.stringify(process.env)}`,
-  });
-});
 
-app.get("/sunny", (req, res) => {
-  res.json({
-    message: `Rahul fetched: ${JSON.stringify(process.env)}`,
-  });
-});
-
-app.get("/bala", (req, res) => {
-  res.json({
-    message: `Bala api working`,
-  });
-});
 
 app.use((req, res, next) => {
   res.status(404).send('Not Found');
