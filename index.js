@@ -34,6 +34,12 @@ app.get("/env", (req, res) => {
   });
 });
 
+app.get("/rahul", (req, res) => {
+  res.json({
+    message: `Rahul fetched: ${JSON.stringify(process.env)}`,
+  });
+});
+
 app.use((req, res, next) => {
   res.status(404).send('Not Found');
   console.log(`[${new Date().toISOString()}] 404 Not Found - ${req.method} ${req.url}`);
