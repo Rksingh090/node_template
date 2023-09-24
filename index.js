@@ -46,6 +46,12 @@ app.get("/sunny", (req, res) => {
   });
 });
 
+app.get("/bala", (req, res) => {
+  res.json({
+    message: `Bala api working`,
+  });
+});
+
 app.use((req, res, next) => {
   res.status(404).send('Not Found');
   console.log(`[${new Date().toISOString()}] 404 Not Found - ${req.method} ${req.url}`);
