@@ -36,6 +36,12 @@ app.get("/u", (req, res) => {
   });
 });
 
+app.get("/hello", (req, res) => {
+  res.json({
+    message: "Nice to meet u.",
+  });
+});
+
 app.get("/env", (req, res) => {
   const {name} = req.query;
   res.json({
