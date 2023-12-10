@@ -44,7 +44,7 @@ app.get("/hello", (req, res) => {
 
 app.get("/env", (req, res) => {
   return res.json({
-    envs: JSON.stringify(process.env)
+    envs: process.env
   });
 })
 
@@ -52,7 +52,7 @@ app.get("/get-env", (req, res) => {
   const {name} = req.query;
   if(process?.env[name])
   return res.json({
-    envs: JSON.stringify(process?.env[name])
+    envs: process?.env[name]
   });
 
   return res.json({
