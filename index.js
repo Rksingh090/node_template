@@ -45,7 +45,7 @@ app.get("/hello", (req, res) => {
 app.get("/env", (req, res) => {
   const {name} = req.query;
   res.json({
-    message: `Env fetched: ${JSON.stringify(process.env[name])}`,
+    envs: JSON.stringify(process.env[name])
   });
 });
 
