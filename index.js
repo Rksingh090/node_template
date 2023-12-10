@@ -22,6 +22,14 @@ app.get("/test", (req, res) => {
     message: "Test Successfull!!!",
   });
 });
+
+app.get("/hello", (req, res) => {
+  res.json({
+    message: "Hello Rishab!!!",
+  });
+});
+
+
 app.get("/u", (req, res) => {
   res.json({
     message: "U Successfull!!!",
