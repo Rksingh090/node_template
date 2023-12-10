@@ -43,9 +43,20 @@ app.get("/hello", (req, res) => {
 });
 
 app.get("/env", (req, res) => {
+  return res.json({
+    envs: JSON.stringify(process.env)
+  });
+})
+
+app.get("/get-env", (req, res) => {
   const {name} = req.query;
-  res.json({
-    envs: JSON.stringify(process.env[name])
+  if(process?.env[name])
+  return res.json({
+    envs: JSON.stringify(process?.env[name])
+  });
+
+  return res.json({
+    err: "env not found"
   });
 });
 
